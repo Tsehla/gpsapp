@@ -19,12 +19,11 @@ return document.getElementById(id).style.backgroundColor=result;
 
 }
 //-------
-//geolocation
-var longitudeStorage= 0;
-var latitudeStorage = 0;
+
+//geolocation finder
 
 if(navigator.geolocation){
-navigator.geolocation.watchPosition(myPosition);
+navigator.geolocation.watchPosition(myPosition, error, gpsOptions)
 }
 else{
   alert("GPS signal not available, please enable gps and restart browser");
@@ -50,6 +49,19 @@ function myPosition(position,latitudeStorage, longitudeStorage ){
   return ;
   
 }
+
+function error(){
+
+return alert("theres an error with gps connection, please check your phone settings or use different browser");
+
+}
+
+function gpsOptions(){
+
+enableHighAccuracy : true;
+
+}
+
 
 
 
@@ -85,26 +97,31 @@ var bodyArr=[[body1,body1a] ,[body2, body2a] ,[body3, body3a]];
 
 
 //header content
-document.getElementById("headerLogo").innerHTML='<img class="logoImage" src="'+logoFinder+'" style="height: 100%; width: 100%; object-fit: contain" >';
+document.getElementById("headerLogo").innerHTML='<img src="'+logoFinder+'">';
 
 //body content
-document.getElementById("bodyContent").innerHTML='<img class="bodyImage" src="'+bodyArr[logoArr.indexOf(logoFinder)][0]+'" style="height: 100%; width: 100%; object-fit: contain" >';
+document.getElementById("bodyContent").innerHTML='<img src="'+bodyArr[logoArr.indexOf(logoFinder)][0]+'">';
 
  //footer content
-document.getElementById("footerLeft").innerHTML='<img class="bodyImageFooter" src="'+bodyArr[logoArr.indexOf(logoFinder)][1]+'" style="height: 100%; width: 100%; object-fit: contain" >';
-document.getElementById("footerRight").innerHTML='<img class="bodyImageFooter" src="'+bodyArr[logoArr.indexOf(logoFinder)][0]+'" style="height: 100%; width: 100%; object-fit: contain" >';
+document.getElementById("footerLeftContent").innerHTML='<img  src="'+bodyArr[logoArr.indexOf(logoFinder)][1]+'">';
+document.getElementById("footerRightContent").innerHTML='<img src="'+bodyArr[logoArr.indexOf(logoFinder)][0]+'">';
            
-           //footer click capture
+//footer click capture
 document.getElementById("footerLeft").onclick=function(){
                    
-         document.getElementById("bodyContent").innerHTML='<img class="bodyImage" src="'+bodyArr[logoArr.indexOf(logoFinder)][1]+'" style="height: 100%; width: 100%; object-fit: contain" >';
+         document.getElementById("bodyContent").innerHTML='<img src="'+bodyArr[logoArr.indexOf(logoFinder)][1]+'">';
                               
            }
            
 document.getElementById("footerRight").onclick=function(){
                    
-         document.getElementById("bodyContent").innerHTML='<img class="bodyImage" src="'+bodyArr[logoArr.indexOf(logoFinder)][0]+'" style="height: 100%; width: 100%; object-fit: contain" >';
+         document.getElementById("bodyContent").innerHTML='<img src="'+bodyArr[logoArr.indexOf(logoFinder)][0]+'">';
                               
            }    
            
     }
+    
+ 
+
+
+
