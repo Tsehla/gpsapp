@@ -199,11 +199,12 @@ height:auto;
 .cartContent{
       position: absolute;
       top:0;
-      left:20;
+      left:0;
       background-color:white;
       border: double powderblue 2px;
       width:90%;
       height:100%;
+      margin-left:5%;
         
 }
 .cartCloser{
