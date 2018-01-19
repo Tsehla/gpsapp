@@ -15,6 +15,14 @@
 
 <!-- ------header------ -->
 <div id="header" class="header">
+<!-- cart -->
+<div id="cart" class="cart">
+<button onclick="cartOpener()">
+<div id="cartWord" class="catWord">Cart : </div>
+<div id="cartCount" class="cartCount">Empty</div>
+</button>
+
+</div>
 
 <div id="headerLogo" class="headerLogo"></div>
 
@@ -24,7 +32,11 @@
 
 <!-- ------app body content ------ -->
 <div id="bodyContent" class="bodyContent"></div>
-
+<!-- controls -->
+<div id="bodyControl" class="bodyControl">
+<div id="magnify" class="magnify"><button onclick="imageMagnify()">Magnify</button></div>
+<div id="buy" class="buy"><button >Buy</button></div>
+</div>
 
 </div>
 
@@ -56,15 +68,35 @@
 
 </div>
 
+<!-- Overlay pop up image click -->
+<div id="imageClick" class="imageClick"></div>
+<!-- shopping trolly/cart -->
+<div id="cartContent" class="cartContent">
 
+<!--cart window closer -->
+<div id="cartCloser" class="cartCloser">
+<!-- box spacing -->
+<div class="closerSpacerLeft"></div>
+<div class="closerSpacerRight" style="border:white solid 1px; width:10%; height:19px; background-color:pink;"><button onclick="closer()">X</button></div>
+</div></div>
 
+<!-- magnify popup -->
+<div id="magnifyWindow" class="magnifyWindow">
+<!--cart window closer -->
+<div id="cartCloser" class="cartCloser">
+<!-- box spacing -->
+<div class="closerSpacerLeft"></div>
+<div class="closerSpacerRight" style="border:white solid 1px; width:10%; height:19px; background-color:pink;"><button onclick="closer()">X</button></div>
+</div>
 
+<!-- image magnified -->
+<div id="imageMagnified" class="imageMagnified"> </div>
 
-
+</div>
 
 
 <script type="text/JavaScript " src="js/index.js"></script>
 
 </body>
 
-</htm>
+</html>
