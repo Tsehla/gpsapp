@@ -12,8 +12,10 @@ function mypos(){
 
 }
 
-function success(){
-      alert("GPS working");
+function success(position){
+      var location= position.coords.latitude+" "+position.coords.longitude;
+      
+      document.getElementById('location').innerHTML=location;
 }
 
 function error(){
